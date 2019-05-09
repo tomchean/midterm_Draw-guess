@@ -1,0 +1,16 @@
+#start_img{
+    height: 50%;
+    width: 80%;
+    margin:40% 20% 5% 10% ;    
+}
+
+#start{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+}
+
+#name-input{
+    margin: 10% auto;
+}

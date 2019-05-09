@@ -1,0 +1,32 @@
+.canvas-wrap {
+    height:65%;
+  }
+  
+.canvas_root{
+  height: 100%;
+}
+
+.answer{
+  height: 7%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+}
+
+
+#rank_con{
+  overflow: auto;
+  margin: 0 auto;
+  width: 100%;
+  height: 28%;
+  text-align:center;
+}
+
+
+.clock{
+  position: absolute;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(126, 126, 126);
+}
