@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/test.js",
+    "start": "concurrently \"nodemon ./bin/test.js\" \"npm run font\"",
     "font" : "cd font && npm start",
     "devstart": "concurrently \"nodemon ./bin/test.js\" \"npm run font\""
   },
