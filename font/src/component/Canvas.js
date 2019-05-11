@@ -14,13 +14,23 @@ export default class App extends React.Component {
     this.state ={
       time : 60,
     }
+    this.status =0;
   }
 
-  send_answer= () => {
-    this.socket.emit('update_ans',this.refs['answer'].value);
-    this.refs['answer'].value ='';
-    this.clock = setInterval(()=>this.tick(),1000);
-    
+  send_answer = () => {
+    if(this.status===0){
+      this.socket.emit('update_ans',this.refs['answer'].value);
+      this.refs['answer'].value ='';
+      this.clock = setInterval(()=>this.tick(),1000);
+      this.status=1;
+    }
+    else{
+      this.socket.emit('answer',{
+        ans:this.refs['answer'].value,
+        name:this.name
+      });
+      this.refs['answer'].value ='';
+    }
   }
 
   tick(){
@@ -69,9 +79,7 @@ export default class App extends React.Component {
     this.refs['answer'].addEventListener("keydown", event => {
       if (event.which === 13 && event.shiftKey === false) {
           event.preventDefault();
-          this.socket.emit('update_ans',this.refs['answer'].value);
-          this.refs['answer'].value ='';
-          this.clock = setInterval(()=>this.tick(),1000);
+          this.send_answer();        
       }
     });
     this._isMounted = true;

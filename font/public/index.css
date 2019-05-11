@@ -2,13 +2,10 @@
 body,html{
     background-color:rgba(221, 221, 221, 0.952);
     margin: 0 auto;
-    /*width: 250px;
-    height: 600px;*/
     overflow-y: hidden;
 }
 
 #root{
-    /*background-image: url('/bg.jpg');*/
     background-color:rgba(0, 110, 255, 0.904);
     margin: 0 auto ;
     max-width: 90%;

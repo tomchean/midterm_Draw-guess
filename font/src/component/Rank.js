@@ -18,7 +18,12 @@ export default class App extends React.Component{
                 var index =0
                 for (let x = 0; x < data.names.length; x++) {
                     index +=1;
-                    people_new.push( <tr style={{ width:'100%'}} key={index}><td style={{ width:'60%'}}>{data.names[x]}</td><td style={{ width:'40%'}}>{data.scores[x]}</td></tr>);
+                    if(data.index!== x){
+                        people_new.push( <tr style={{ width:'100%'}} key={index}><td style={{ width:'60%'}}>{data.names[x]}</td><td style={{ width:'40%'}}>{data.scores[x]}</td></tr>);
+                    }
+                    else{
+                        people_new.push( <tr style={{ width:'100%'}} key={index}><td style={{ width:'60%'}}>{ "✍ "+data.names[x]}</td><td style={{ width:'40%'}}>{data.scores[x]}</td></tr>);
+                    }
                 }
                 this.setState({ people : people_new });
             }
@@ -29,9 +34,9 @@ export default class App extends React.Component{
             if(this._isMounted){
                 var message_new =[];
                 var index =0
-                for (let x = 0; x < message.length; x++) {
+                for (let x = message.length-1; x >=0 ; x--) {
                     index +=1;
-                    message_new.push( <tr style={{ width:'100%'}} key={index}><td style={{margin: '0 ,auto'}}>{message[x]}</td></tr>);
+                    message_new.push( <tr style={{ width:'100%'}} key={index}><td style={{textAlign:'left' }}>{ message[x].name+' : '+message[x].ans}</td></tr>);
                 }
                 this.setState({ message : message_new });
             }

@@ -21,6 +21,7 @@ export default class Blog extends Component {
 		let socket = Socket.get_socket();
 		socket.emit('new_people',this.refs['name'].value);
 		socket.on('goto',index =>{
+			console.log('goto'+index);
 			let history = this.props.history;
 			history.push(index);
 		})

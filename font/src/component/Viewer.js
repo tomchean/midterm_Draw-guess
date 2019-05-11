@@ -39,6 +39,20 @@ export default class App extends React.Component {
         })
       }
     })
+    
+    this.socket.on('reset',()=>{
+      if(this._isMounted ===true){
+        this.watch.clear();
+        if(this.clock !== null){
+          clearInterval(this.clock);
+          this.clock = null;
+          this.setState({
+            time: 60
+          })
+        }
+        this.status = 0;
+      }      
+    })
 
   }
 

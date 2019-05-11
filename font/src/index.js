@@ -13,5 +13,12 @@ if (width >360){
 
 document.body.style.height = height+'px'
 document.body.style.width = width+'px'
-console.log(height,width)
+
+let u = navigator.userAgent;
+let isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);     
+if(isIOS===true){
+    document.body.addEventListener('touchmove' , function (e) {
+        e.preventDefault() 
+    }, {passive: false});
+}
 ReactDOM.render(<App />, document.getElementById("container"));

@@ -63,14 +63,28 @@ export default class {
     })
     this.socket.on('change_color',value=>{
       context.strokeStyle = value;
+      console.log('change_color')
     })
     this.socket.on('clear',(data=>{
+      var prev = {
+        width:context.lineWidth,
+        color :context.strokeStyle
+      }
       canvas.width = canvas.width; 
       canvas.height = canvas.height;
       create(); // 重新创建画布背景和画笔
+      context.lineWidth = prev.width;
+      context.strokeStyle = prev.color;
+
     }))
 
   }
+
+  clear(){
+    canvas.width = canvas.width; 
+    canvas.height = canvas.height;
+    create(); // 重新创建画布背景和画笔
+  }  
   init = (canvasDivDom, classname)=>{
     canvasDiv = canvasDivDom; // 传入画布父盒子
     canvasWidth = canvasDiv.clientWidth; // 获取父盒子宽度
