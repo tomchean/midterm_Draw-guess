@@ -1,8 +1,10 @@
 Draw & Guess
 ---
-一句話描述這個 project 在做什麼: 使用react與socket.io實作你畫我猜
+一句話描述這個 project 在做什麼: 
+>使用react與socket.io實作你畫我猜
 ---
-Deployed 連結 : https://mydraw-something.herokuapp.com 
+Deployed 連結 : 
+>https://mydraw-something.herokuapp.com 
 ---
 使用/操作方式:
 >clone後,輸入npm install,再npm start 或是node server.js 在瀏覽器輸入localhost:3000 即可.
@@ -11,4 +13,8 @@ Deployed 連結 : https://mydraw-something.herokuapp.com
 使用與參考之框架/模組/原始碼:
 >參考github：https://github.com/open-canvas-ui/canvas2dDraw 此repo完成處理單機的canvas做圖,我以此repo為起始,利用socket.io 完成同步繪畫以及使用者登入的介面及router處理
 ---
-心得
+我的貢獻:
+>除了處理canvas的畫圖事件以外,其餘皆是獨立完成,並deploy到heroku上
+---
+心得:
+>寫完這個project對react,react-router,socket.io的使用熟悉度上升不少,並且學到利用react build 寫好的 app 還有如何 deploy 到線上免費的server,另外heroku區域好像只有 US 和 EU 兩個地方可以選,因此載入會花一點時間,另一個方法是利用速網的ip來當作伺服器,就可以有較快的網路速度.
