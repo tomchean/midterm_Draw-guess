@@ -1,21 +1,25 @@
 {
-  "name": "mid-project-server",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "concurrently \"nodemon ./bin/test.js\" \"npm run font\"",
-    "font" : "cd font && npm start",
-    "devstart": "concurrently \"nodemon ./bin/test.js\" \"npm run font\""
+  "name": "canvas2dDraw",
+  "version": "0.1.0",
+  "license": "MIT",
+  "devDependencies": {
+    "react-scripts": "^1.1.4"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "express": "~4.16.0",
-    "http-errors": "~1.6.2",
-    "jade": "~1.11.0",
-    "mongoose": "^5.5.4",
-    "morgan": "~1.9.0",
-    "nodemon": "^1.18.11",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
+  },
+  "engines": {
+    "node":"8.10.0"
   }
 }
