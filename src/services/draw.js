@@ -95,11 +95,11 @@ export default class {
     // 创建画布背景和画笔
     create();
     // 开始监控画图
-    /*
+    
     setTimeout(() => {
       this.listen(classname); 
-    }, 1000);
-    */
+    }, 2000);
+    
   }
   /* 画图时的监控 */
   listen = (classname)=> {
