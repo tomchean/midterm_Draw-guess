@@ -76,6 +76,7 @@ export default class App extends React.Component {
     this.refs['brush-size'].value = 2;
     this.refs['color-picker'].addEventListener("change", this.draw.change_color, false);
     this.draw.init(this.refs['canvas-wrap']);
+    setTimeout(() => {}, 2000);
     this.draw.listen();
     this.refs['answer'].addEventListener("keydown", event => {
       if (event.which === 13 && event.shiftKey === false) {
