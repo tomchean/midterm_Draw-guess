@@ -98,7 +98,7 @@ export default class {
     
     setTimeout(() => {
       this.listen(classname); 
-    }, 2000);
+    }, 1500);
     
   }
   /* 画图时的监控 */
